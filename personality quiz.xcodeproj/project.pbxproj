@@ -15,6 +15,10 @@
 		F35337A521A2E9A60093FEB2 /* QuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35337A421A2E9A60093FEB2 /* QuestionsVC.swift */; };
 		F35337A721A2E9CE0093FEB2 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35337A621A2E9CE0093FEB2 /* ResultsVC.swift */; };
 		F35337A921A2EA780093FEB2 /* QuestionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35337A821A2EA780093FEB2 /* QuestionsData.swift */; };
+		F3A2C24621C6E755000084A7 /* kobe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3A2C24421C6E752000084A7 /* kobe.jpg */; };
+		F3A2C24721C6E755000084A7 /* LeBron.png in Resources */ = {isa = PBXBuildFile; fileRef = F3A2C24521C6E754000084A7 /* LeBron.png */; };
+		F3A2C24921C6E75E000084A7 /* Jordan2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3A2C24821C6E75E000084A7 /* Jordan2.jpg */; };
+		F3A2C24B21C6E77C000084A7 /* Scalabrine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3A2C24A21C6E77C000084A7 /* Scalabrine.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		F35337A421A2E9A60093FEB2 /* QuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsVC.swift; sourceTree = "<group>"; };
 		F35337A621A2E9CE0093FEB2 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
 		F35337A821A2EA780093FEB2 /* QuestionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsData.swift; sourceTree = "<group>"; };
+		F3A2C24421C6E752000084A7 /* kobe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kobe.jpg; path = ../../../../kobe.jpg; sourceTree = "<group>"; };
+		F3A2C24521C6E754000084A7 /* LeBron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeBron.png; path = ../../../../LeBron.png; sourceTree = "<group>"; };
+		F3A2C24821C6E75E000084A7 /* Jordan2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Jordan2.jpg; path = ../../../../Jordan2.jpg; sourceTree = "<group>"; };
+		F3A2C24A21C6E77C000084A7 /* Scalabrine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Scalabrine.jpg; path = ../../../../Scalabrine.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 				F35337A621A2E9CE0093FEB2 /* ResultsVC.swift */,
 				F35337A821A2EA780093FEB2 /* QuestionsData.swift */,
 				F353379621A2DEF80093FEB2 /* Main.storyboard */,
+				F3A2C24821C6E75E000084A7 /* Jordan2.jpg */,
+				F3A2C24421C6E752000084A7 /* kobe.jpg */,
+				F3A2C24521C6E754000084A7 /* LeBron.png */,
+				F3A2C24A21C6E77C000084A7 /* Scalabrine.jpg */,
 				F353379921A2DEFE0093FEB2 /* Assets.xcassets */,
 				F353379B21A2DEFE0093FEB2 /* LaunchScreen.storyboard */,
 				F353379E21A2DEFE0093FEB2 /* Info.plist */,
@@ -133,7 +145,11 @@
 			files = (
 				F353379D21A2DEFE0093FEB2 /* LaunchScreen.storyboard in Resources */,
 				F353379A21A2DEFE0093FEB2 /* Assets.xcassets in Resources */,
+				F3A2C24921C6E75E000084A7 /* Jordan2.jpg in Resources */,
 				F353379821A2DEF80093FEB2 /* Main.storyboard in Resources */,
+				F3A2C24B21C6E77C000084A7 /* Scalabrine.jpg in Resources */,
+				F3A2C24621C6E755000084A7 /* kobe.jpg in Resources */,
+				F3A2C24721C6E755000084A7 /* LeBron.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

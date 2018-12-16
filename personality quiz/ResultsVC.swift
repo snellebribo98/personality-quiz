@@ -10,11 +10,14 @@ import UIKit
 
 class ResultsVC: UIViewController
 {
+    // set outlets
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultDefinition: UILabel!
     
+    // set variables
     var responses: [Answer]!
     
+    // set initial screen
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -22,9 +25,10 @@ class ResultsVC: UIViewController
         navigationItem.hidesBackButton = true
     }
     
+    // calculates what you are with the given answers
     func calculatePersonalityResult()
     {
-        var frequencyOfAnswers: [AnimalType: Int] = [:]
+        var frequencyOfAnswers: [Type: Int] = [:]
         
         let responseTypes = responses.map { $0.type }
         

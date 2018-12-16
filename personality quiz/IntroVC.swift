@@ -8,18 +8,43 @@
 
 import UIKit
 
-class IntroVC: UIViewController {
-
+class IntroVC: UIViewController
+{
+    // set variables
+    var quizChoose: String = ""
+    
+    // set initial screen
     override func viewDidLoad()
     {
         super.viewDidLoad()
     }
-
-    @IBAction func startQuizPressed(_ sender: Any)
+    
+    // unwind destination
+    @IBAction func unwindQuiz(segue:UIStoryboardSegue) { }
+    
+    // If button pressed assign correct quiz
+    @IBAction func animalButtonPressed(_ sender: Any)
     {
+        quizChoose = "Animal"
         performSegue(withIdentifier: "startQuiz", sender: nil)
     }
     
-    @IBAction func unwindToQuizIntroduction(segue: UIStoryboardSegue) {}
+    // If button pressed assign correct quiz
+    @IBAction func basketballButtonPressed(_ sender: Any)
+    {
+        quizChoose = "Basketball"
+        performSegue(withIdentifier: "startQuiz", sender: nil)
+    }
+    
+    // gives the correct quiz to the next view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "startQuiz"
+        {
+            let NavigationController = segue.destination as! UINavigationController
+            let VC = NavigationController.topViewController as! QuestionsVC
+            VC.quizChoose = quizChoose
+        }
+    }
 }
 

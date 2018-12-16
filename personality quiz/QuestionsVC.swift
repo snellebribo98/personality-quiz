@@ -43,40 +43,78 @@ class QuestionsVC: UIViewController
     
     // Properties
     var questionIndex = 0
+    var progressIndex = 0
     var answersChosen: [Answer] = []
+    var quizChoose: String?
+    var quiz: String = ""
     
-    var questions: [Question] =
+    // questions
+    var questions: [Question] = 
         [
-        Question(text: "Which food do you like the most?", type: .single, answers:
+        Question(text: "Which food do you like the most?", type: .single, quiz: "Animal", answers:
             [
             Answer(text: "Steak", type: .dog),
             Answer(text: "Fish", type: .cat),
             Answer(text: "Carrots", type: .rabbit),
             Answer(text: "Corn", type: .turtle)
             ]),
-        Question(text: "Which activities do you enjoy?", type: .multiple, answers:
+        Question(text: "What is you speciality on and off the court?", type: .single, quiz: "Basketball", answers:
+            [
+            Answer(text: "Winning", type: .Jordan),
+            Answer(text: "Scoring", type: .Kobe),
+            Answer(text: "Clapping my hands", type: .Scalabrine),
+            Answer(text: "Acting", type: .LeBron)
+            ]),
+        Question(text: "Which activities do you enjoy?", type: .multiple, quiz: "Animal", answers:
             [
             Answer(text: "Swimming", type: .turtle),
             Answer(text: "Sleeping", type: .cat),
             Answer(text: "Cuddling", type: .rabbit),
             Answer(text: "Eating", type: .dog)
             ]),
-        Question(text: "How much do you enjoy car rides?", type: .ranged, answers:
+        Question(text: "What would you like to do when you retire?", type: .multiple, quiz: "Basketball", answers:
+            [
+            Answer(text: "Manage a losing team", type: .Jordan),
+            Answer(text: "Nothing much, sleep and earn money while sleeping", type: .Kobe),
+            Answer(text: "Go into the broadcasting business", type: .Scalabrine),
+            Answer(text: "Manage a team (doesn't that sound awfully familiar)", type: .LeBron)
+            ]),
+        Question(text: "How much do you enjoy car rides?", type: .ranged, quiz: "Animal", answers:
             [
             Answer(text: "I dislike them", type: .cat),
             Answer(text: "I get a little nervous", type: .rabbit),
             Answer(text: "I barely notice them", type: .turtle),
             Answer(text: "I love them", type: .dog)
+            ]),
+        Question(text: "How much do you hate lossing?", type: .ranged, quiz: "Basketball", answers:
+            [
+            Answer(text: "I hate it the most", type: .Jordan),
+            Answer(text: "I get angry on my teammates, I'm sure as hell not responsible", type: .Kobe),
+            Answer(text: "I was sitting in stands, so I don't really mind", type: .Scalabrine),
+            Answer(text: "I'm so used to it by now", type: .LeBron)
             ])
         ]
     
-    
+    // set initial screen and assign questions to selected quiz
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if quizChoose == "Animal"
+        {
+            quiz = "Animal"
+            questionIndex = 0
+        }
+        else if quizChoose == "Basketball"
+        {
+            quiz = "Basketball"
+            questionIndex = 1
+        }
+        
         updateUI()
     }
     
+    // updates the screen after each question is answered
     func updateUI()
     {
         singleStackView.isHidden = true
@@ -85,7 +123,7 @@ class QuestionsVC: UIViewController
         
         let currentQuestion = questions[questionIndex]
         let currentAnswers = currentQuestion.answers
-        let totalProgress = Float(questionIndex) / Float(questions.count)
+        let totalProgress = Float(progressIndex) / Float(questions.count / 2)
         
         navigationItem.title = "Question #\(questionIndex + 1)"
         questionLabel.text = currentQuestion.text
@@ -102,6 +140,7 @@ class QuestionsVC: UIViewController
         }
     }
     
+    // updates and enables the single question view
     func updateSingleStack(using answers: [Answer])
     {
         singleStackView.isHidden = false
@@ -110,7 +149,8 @@ class QuestionsVC: UIViewController
         singleButton3.setTitle(answers[2].text, for: .normal)
         singleButton4.setTitle(answers[3].text, for: .normal)
     }
-
+    
+    // updates and enables the multi question view
     func updateMultipleStack(using answers: [Answer])
     {
         multipleStackView.isHidden = false
@@ -124,6 +164,7 @@ class QuestionsVC: UIViewController
         multiLabel4.text = answers[3].text
     }
     
+    // updates and enables the ranged question view
     func updateRangedStack(using answers: [Answer])
     {
         rangedStackView.isHidden = false
@@ -132,6 +173,7 @@ class QuestionsVC: UIViewController
         rangedLabel2.text = answers.last?.text
     }
     
+    // appends answer after a button is pressed
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton)
     {
         let currentAnswers = questions[questionIndex].answers
@@ -153,6 +195,7 @@ class QuestionsVC: UIViewController
         nextQuestion()
     }
     
+    // appends answers after buttons are selected
     @IBAction func multipleAnswerButtonPressed()
     {
         let currentAnswers = questions[questionIndex].answers
@@ -173,6 +216,7 @@ class QuestionsVC: UIViewController
         nextQuestion()
     }
     
+    // appends answer after a range slider is set
     @IBAction func rangedAnswerButtonPressed()
     {
         let currentAnswers = questions[questionIndex].answers
@@ -183,9 +227,12 @@ class QuestionsVC: UIViewController
         nextQuestion()
     }
     
+    // function that leads to next question if there is any
+    // otherwise shows to next view controller
     func nextQuestion()
     {
-        questionIndex += 1
+        questionIndex += 2
+        progressIndex += 1
         
         if questionIndex < questions.count
         {
@@ -197,6 +244,7 @@ class QuestionsVC: UIViewController
         }
     }
     
+    // gives information from this view controller to the next view controller
     override func prepare(for segue: UIStoryboardSegue, sender:
     Any?)
     {

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:personality quiz.xcodeproj">
+      location = "group:../../../../Scalabrine.jpg">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

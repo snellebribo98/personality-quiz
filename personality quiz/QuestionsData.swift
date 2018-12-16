@@ -12,6 +12,7 @@ struct Question
 {
     var text: String
     var type: ResponseType
+    var quiz: String
     var answers: [Answer]
 }
 
@@ -23,12 +24,12 @@ enum ResponseType
 struct Answer
 {
     var text: String
-    var type: AnimalType
+    var type: Type
 }
 
-enum AnimalType: Character
+enum Type: String
 {
-    case dog = "🐶", cat = "🐱", rabbit = "🐰", turtle = "🐢"
+    case dog = "🐶", cat = "🐱", rabbit = "🐰", turtle = "🐢", Jordan = "Jordan", Kobe = "Kobe", Scalabrine = "Scalabrine", LeBron = "LeBron"
     
     var definition: String
     {
@@ -42,6 +43,14 @@ enum AnimalType: Character
             return "You love everything that's soft. You are healthy and full of energy."
         case .turtle:
             return "You are wise beyond your years, and youfocus on the details. Slow and steady wins the race."
+        case .Jordan:
+            return "You're the greatest of all time... But let's just keep it at playing basketball"
+        case .Kobe:
+            return "You're the most selfish player on the court, but good at what you do"
+        case .Scalabrine:
+            return "You think you're the best, but everyone makes fun of your skills"
+        case .LeBron:
+            return "You're the only one in the world who thinks you're the best in what you do"
         }
     }
 }
